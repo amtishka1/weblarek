@@ -72,8 +72,8 @@ console.log('Все данные покупателя:', buyerModel.getData());
 
 console.log('Результат валидации (ошибки):', buyerModel.validate());
 
-console.log('Валидность шага 1 (оплата и адрес):', buyerModel.isValidStep1());
-console.log('Валидность шага 2 (email и телефон):', buyerModel.isValidStep2());
+console.log('Валидность оплаты и адреса:', buyerModel.isValidPaymentAndAddress());
+console.log('Валидность email и телефон:', buyerModel.isValidEmailAndPhone());
 console.log('Полная валидность данных:', buyerModel.isValid());
 
 buyerModel.clear();

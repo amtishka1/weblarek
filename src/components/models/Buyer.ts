@@ -1,11 +1,6 @@
 import { IBuyer, TPayment } from '../../types';
 
-export interface IValidationErrors {
-    payment?: string;
-    email?: string;
-    phone?: string;
-    address?: string;
-}
+type IValidationErrors = Partial<Record<keyof IBuyer, string>>;
 
 export class Buyer {
     private payment: TPayment;
@@ -14,7 +9,7 @@ export class Buyer {
     private address: string;
 
     constructor() {
-        this.payment = 'card';
+        this.payment = '';
         this.email = '';
         this.phone = '';
         this.address = '';
@@ -46,7 +41,7 @@ export class Buyer {
     }
 
     clear(): void {
-        this.payment = 'card';
+        this.payment = '';
         this.email = '';
         this.phone = '';
         this.address = '';
@@ -74,11 +69,11 @@ export class Buyer {
         return errors;
     }
 
-    isValidStep1(): boolean {
+    isValidPaymentAndAddress(): boolean {
         return !!this.payment && !!this.address;
     }
 
-    isValidStep2(): boolean {
+    isValidEmailAndPhone(): boolean {
         return !!this.email && !!this.phone;
     }
 
