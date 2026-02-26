@@ -71,10 +71,7 @@ console.log('Установлен телефон:', buyerModel.getData().phone);
 console.log('Все данные покупателя:', buyerModel.getData());
 
 console.log('Результат валидации (ошибки):', buyerModel.validate());
-
-console.log('Валидность оплаты и адреса:', buyerModel.isValidPaymentAndAddress());
-console.log('Валидность email и телефон:', buyerModel.isValidEmailAndPhone());
-console.log('Полная валидность данных:', buyerModel.isValid());
+console.log('Полная валидность данных:', Object.keys(buyerModel.validate()).length === 0);
 
 buyerModel.clear();
 console.log('Данные после очистки:', buyerModel.getData());

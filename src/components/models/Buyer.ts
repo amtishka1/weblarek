@@ -68,17 +68,4 @@ export class Buyer {
 
         return errors;
     }
-
-    isValidPaymentAndAddress(): boolean {
-        return !!this.payment && !!this.address;
-    }
-
-    isValidEmailAndPhone(): boolean {
-        return !!this.email && !!this.phone;
-    }
-
-    isValid(): boolean {
-        const errors = this.validate();
-        return Object.keys(errors).length === 0;
-    }
 }

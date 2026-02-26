@@ -24,6 +24,7 @@ export interface IBuyer {
 }
 
 export interface IOrderData extends IBuyer{
+    total: number;
     items: string[];
 }
 
